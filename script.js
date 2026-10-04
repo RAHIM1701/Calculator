@@ -19,11 +19,13 @@ let numb2=Number(prompt('Numb2'))
 let op=prompt('opperation')
 console.log(calculation(numb1,numb2,op))*/
 //2)a way to make pressing buttonadd a numbur to a string then make the tp a numbur
+let display=document.querySelector('.display')
 let numb=[]
 let numberButtons=document.querySelectorAll('.keys')
 numberButtons.forEach(button => {
     button.addEventListener('click',()=>{
-        numb.push(button.value)
+    numb.push(button.value)
+    display.textContent=numb.join("")
     console.log(numb)
     })
 });
@@ -32,4 +34,5 @@ resultBut.addEventListener('click',()=>{
     console.log(numb.join(""))
 })
 //3)make the sring appear as a display
+
 //4) a way to make the clicking in an opperation button save the number and wait for the next opperation
