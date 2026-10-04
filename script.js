@@ -23,11 +23,13 @@ let numb=[]
 let numberButtons=document.querySelectorAll('.keys')
 numberButtons.forEach(button => {
     button.addEventListener('click',()=>{
-        numb.push(button.id)
+        numb.push(button.value)
     console.log(numb)
-
     })
-    
 });
+let resultBut=document.querySelector('.result')
+resultBut.addEventListener('click',()=>{
+    console.log(numb.join(""))
+})
 //3)make the sring appear as a display
 //4) a way to make the clicking in an opperation button save the number and wait for the next opperation
