@@ -14,10 +14,6 @@ function calculation(num1,num2,opperation){
     }
     return result
 }
-/*let numb1=Number(prompt('Numb1'))
-let numb2=Number(prompt('Numb2'))
-let op=prompt('opperation')
-console.log(calculation(numb1,numb2,op))*/
 //2)a way to make pressing buttonadd a numbur to a string then make the tp a numbur
 //3)make the sring appear as a display
 let display=document.querySelector('.display')
@@ -30,11 +26,12 @@ numberButtons.forEach(button => {
         console.log(numb)
     })
 });
+//4) a way to make the clicking in an opperation button save the number and wait for the next opperation
 let firstNumb,secondNumb,opperation
 let opButtons=document.querySelectorAll('.opKeys')
 opButtons.forEach(button => {
     button.addEventListener('click',()=>{
-        firstNumb=numb.join("")
+        firstNumb=Number(numb.join(""))
         numb=[]
         console.log(firstNumb)
         opperation=button.value
@@ -42,15 +39,14 @@ opButtons.forEach(button => {
         display.textContent=""
     })
 });
-let result=document.querySelector(".result")
-result.addEventListener('click',()=>{
-
+let resultButton=document.querySelector(".result")
+resultButton.addEventListener('click',()=>{
+    secondNumb=Number(numb.join(""))
+    numb=[]
+    console.log(calculation(firstNumb,secondNumb,opperation))
+    display.textContent=`${firstNumb+opperation+secondNumb}=`+calculation(firstNumb,secondNumb,opperation)
 })
-
-// let resultBut=document.querySelector('.result')
-// resultBut.addEventListener('click',()=>{
-//     console.log(numb.join(""))
-// })
-//4) a way to make the clicking in an opperation button save the number and wait for the next opperation
+//5)add delete button
+//6)
 
 
