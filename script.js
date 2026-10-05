@@ -26,15 +26,31 @@ let numberButtons=document.querySelectorAll('.numbKeys')
 numberButtons.forEach(button => {
     button.addEventListener('click',()=>{
         numb.push(button.value)
-    display.textContent=numb.join("")
-    console.log(numb)
+        display.textContent=numb.join("")
+        console.log(numb)
     })
 });
+let firstNumb,secondNumb,opperation
 let opButtons=document.querySelectorAll('.opKeys')
+opButtons.forEach(button => {
+    button.addEventListener('click',()=>{
+        firstNumb=numb.join("")
+        numb=[]
+        console.log(firstNumb)
+        opperation=button.value
+        console.log(opperation)
+        display.textContent=""
+    })
+});
+let result=document.querySelector(".result")
+result.addEventListener('click',()=>{
+
+})
 
 // let resultBut=document.querySelector('.result')
 // resultBut.addEventListener('click',()=>{
 //     console.log(numb.join(""))
 // })
 //4) a way to make the clicking in an opperation button save the number and wait for the next opperation
+
 
