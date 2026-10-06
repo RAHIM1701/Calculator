@@ -14,11 +14,10 @@ function calculation(num1,num2,opperation){
     }
     return result
 }
-//2)a way to make pressing buttonadd a numbur to a string then make the tp a numbur
-//3)make the sring appear as a display
-let display=document.querySelector('.display')
+//the display
 let numb=[]
 let numberButtons=document.querySelectorAll('.numbKeys')
+let display=document.querySelector('.display')
 numberButtons.forEach(button => {
     button.addEventListener('click',()=>{
         numb.push(button.value)
@@ -26,27 +25,43 @@ numberButtons.forEach(button => {
         console.log(numb)
     })
 });
-//4) a way to make the clicking in an opperation button save the number and wait for the next opperation
-let firstNumb,secondNumb,opperation
+//sitting the first number
+let firstNumb,secondNumb,opperation,wasClicked=false
 let opButtons=document.querySelectorAll('.opKeys')
 opButtons.forEach(button => {
     button.addEventListener('click',()=>{
-        firstNumb=Number(numb.join(""))
+        opperation=button.value;
+        if(!wasClicked){
+            firstNumb=Number(numb.join(""))
+           console.log(`firstNumb=${firstNumb}`)
+        console.log(`opperation=${opperation}`)
+        console.log(`wasClicked=${wasClicked}`)
+        }
+        else{
+            console.log('Number(numb.join("")='+Number(numb.join("")))
+            console.log(`firstNumb=${firstNumb}`)
+            console.log(`opperation=${opperation}`)
+            console.log(`wasClicked=${wasClicked}`)        
+            firstNumb=(firstNumb,Number(numb.join("")),opperation)
+            console.log(`firstNumb=${firstNumb}`)
+        }
         numb=[]
-        console.log(firstNumb)
-        opperation=button.value
-        console.log(opperation)
-        display.textContent=""
+        wasClicked=true
     })
 });
+//sitting the second number
 let resultButton=document.querySelector(".result")
 resultButton.addEventListener('click',()=>{
     secondNumb=Number(numb.join(""))
+    console.log(`secondNumb=${secondNumb}`)
+    
     numb=[]
     console.log(calculation(firstNumb,secondNumb,opperation))
     display.textContent=`${firstNumb+opperation+secondNumb}=`+calculation(firstNumb,secondNumb,opperation)
 })
 //5)add delete button
-//6)
+//6) find how to save multipule numbers and multipule opperations
+// and how to make clicking an opperation for the second time save the prevouse result as a firstNumber.
+
 
 
