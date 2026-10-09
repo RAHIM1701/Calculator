@@ -22,7 +22,6 @@ numberButtons.forEach(button => {
     button.addEventListener('click',()=>{
         numb.push(button.value)
         display.textContent=numb.join("")
-        console.log(numb)
     })
 });
 //sitting the first number
@@ -33,17 +32,10 @@ opButtons.forEach(button => {
         opperation=button.value;
         if(!wasClicked){
             firstNumb=Number(numb.join(""))
-           console.log(`firstNumb=${firstNumb}`)
-        console.log(`opperation=${opperation}`)
-        console.log(`wasClicked=${wasClicked}`)
         }
         else{
-            console.log('Number(numb.join("")='+Number(numb.join("")))
-            console.log(`firstNumb=${firstNumb}`)
-            console.log(`opperation=${opperation}`)
-            console.log(`wasClicked=${wasClicked}`)        
-            firstNumb=(firstNumb,Number(numb.join("")),opperation)
-            console.log(`firstNumb=${firstNumb}`)
+            firstNumb=calculation(firstNumb,Number(numb.join("")),opperation)
+            display.textContent=firstNumb
         }
         numb=[]
         wasClicked=true
@@ -53,10 +45,7 @@ opButtons.forEach(button => {
 let resultButton=document.querySelector(".result")
 resultButton.addEventListener('click',()=>{
     secondNumb=Number(numb.join(""))
-    console.log(`secondNumb=${secondNumb}`)
-    
     numb=[]
-    console.log(calculation(firstNumb,secondNumb,opperation))
     display.textContent=`${firstNumb+opperation+secondNumb}=`+calculation(firstNumb,secondNumb,opperation)
 })
 //5)add delete button
