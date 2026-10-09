@@ -1,4 +1,3 @@
-//WHAT DO WE NEED?
 //1)a function that do the math
 function calculation(num1,num2,opperation){
     let result
@@ -29,7 +28,6 @@ let firstNumb,secondNumb,opperation,wasClicked=false
 let opButtons=document.querySelectorAll('.opKeys')
 opButtons.forEach(button => {
     button.addEventListener('click',()=>{
-        opperation=button.value;
         if(!wasClicked){
             firstNumb=Number(numb.join(""))
         }
@@ -37,6 +35,7 @@ opButtons.forEach(button => {
             firstNumb=calculation(firstNumb,Number(numb.join("")),opperation)
             display.textContent=firstNumb
         }
+        opperation=button.value;
         numb=[]
         wasClicked=true
     })
@@ -48,9 +47,4 @@ resultButton.addEventListener('click',()=>{
     numb=[]
     display.textContent=`${firstNumb+opperation+secondNumb}=`+calculation(firstNumb,secondNumb,opperation)
 })
-//5)add delete button
-//6) find how to save multipule numbers and multipule opperations
-// and how to make clicking an opperation for the second time save the prevouse result as a firstNumber.
-
-
 
