@@ -1,4 +1,4 @@
-//1)a function that do the math
+//a function that do the math
 function calculation(num1,num2,opperation){
     let result
     switch (opperation) {
@@ -17,6 +17,7 @@ function calculation(num1,num2,opperation){
 let numb=[]
 let numberButtons=document.querySelectorAll('.numbKeys')
 let display=document.querySelector('.display')
+let opButtons=document.querySelectorAll('.opKeys')
 numberButtons.forEach(button => {
     button.addEventListener('click',()=>{
         numb.push(button.value)
@@ -25,7 +26,6 @@ numberButtons.forEach(button => {
 });
 //sitting the first number
 let firstNumb,secondNumb,opperation,wasClicked=false
-let opButtons=document.querySelectorAll('.opKeys')
 opButtons.forEach(button => {
     button.addEventListener('click',()=>{
         if(!wasClicked){
@@ -43,8 +43,16 @@ opButtons.forEach(button => {
 //sitting the second number
 let resultButton=document.querySelector(".result")
 resultButton.addEventListener('click',()=>{
-    secondNumb=Number(numb.join(""))
-    numb=[]
-    display.textContent=`${firstNumb+opperation+secondNumb}=`+calculation(firstNumb,secondNumb,opperation)
+    if(!wasClicked){
+        secondNumb=Number(numb.join(""))
+        numb=[]
+        display.textContent=`${firstNumb+opperation+secondNumb}=`+calculation(firstNumb,secondNumb,opperation)
+    }
+    else{
+        secondNumb=Number(numb.join(""))
+        numb=[]
+        display.textContent=`${firstNumb+opperation+secondNumb}=`+calculation(firstNumb,secondNumb,opperation)
+        firstNumb=calculation(firstNumb,secondNumb,opperation)
+    }
+    
 })
-
