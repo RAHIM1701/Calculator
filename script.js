@@ -66,3 +66,14 @@ deleteButton.addEventListener('click',()=>{
     numb.pop()
     display.textContent=numb.join("")
 })
+//AC button
+let acButton=document.querySelector('#acButton')
+acButton.addEventListener('click',()=>{
+    firstNumb=0
+    secondNumb=0
+    opperation=NaN
+    numb=[]
+    display.textContent=numb.join("")
+    opperationClicked=false
+    dotClicked=false
+})
