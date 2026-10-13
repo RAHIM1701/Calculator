@@ -8,7 +8,7 @@ function calculation(num1,num2,opperation){
         break;
         case '*':result=num1*num2  
         break;
-        case '/':result=(num2===0)?'error:reset the page':num1/num2  
+        case '/':result=(num2===0)?'error':num1/num2  
         break;
     }
     return result

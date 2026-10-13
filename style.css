@@ -4,7 +4,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #aa8080;
+    background-color: #282c34;
 }
 .calculator{
     padding: 10px;
@@ -15,13 +15,14 @@ body{
     background-color: #1a1a1d;
 }
 .display{
-    border-radius: 5%;
-
+    text-align: end;
+    margin-bottom: 10px;
     background-color: #0c0c0e;
     color: #ff9e00;
     color: aqua;
 }
 button{
+    font-size: large;
     border-radius: 5%;
     border: 1px solid #282844 ;
     height: 50px;
@@ -43,15 +44,15 @@ button{
     color: #39ff14;
 }
 .result, #acButton{
-    width: 110px;
+    width: 116px;
 }
 .oldOpperation{
-    height: 30px;
-    /* border: 1px rgb(64, 47, 95) solid; */
+    height: 25px;
+    font-size: 25px;
 }
 .newOpperation{
-    height: 30px;
-    /* border: 1px rgb(99, 23, 23) solid; */
+    height: 45px;
+    font-size: 43px;
 }
 .result{
     background-color: #1a1a1d;
