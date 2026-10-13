@@ -25,10 +25,10 @@ numberButtons.forEach(button =>{
     })
 });
 //sitting the first number
-let firstNumb,secondNumb,opperation,wasClicked=false
+let firstNumb,secondNumb,opperation,opperationClicked=false
 opButtons.forEach(button => {
     button.addEventListener('click',()=>{
-        if(!wasClicked){
+        if(!opperationClicked){
             firstNumb=Number(numb.join(""))
         }
         else{
@@ -37,16 +37,28 @@ opButtons.forEach(button => {
         }
         opperation=button.value;
         numb=[]
-        wasClicked=true
+        opperationClicked=true
+        dotClicked=false
     })
 });
+//the dot
+let dot=document.querySelector('#dot')
+let dotClicked=false
+dot.addEventListener('click',()=>{
+    if(dotClicked===false){
+    numb.push(dot.value)
+    display.textContent=numb.join("")
+    dotClicked=true
+    }
+})
 //sitting the second number
 let resultButton=document.querySelector(".result")
 resultButton.addEventListener('click',()=>{
-        secondNumb=Number(numb.join(""))
-        numb=[]
-        display.textContent=`${firstNumb+opperation+secondNumb}=`+calculation(firstNumb,secondNumb,opperation)
-        firstNumb=calculation(firstNumb,secondNumb,opperation)
+    secondNumb=Number(numb.join(""))
+    numb=[]
+    display.textContent=`${firstNumb+opperation+secondNumb}=`+calculation(firstNumb,secondNumb,opperation)
+    firstNumb=calculation(firstNumb,secondNumb,opperation)
+    dotClicked=false
 })
 //delete button
 let deleteButton=document.querySelector("#deleteButton")
