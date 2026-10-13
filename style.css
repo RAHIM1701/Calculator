@@ -1,10 +1,14 @@
 body{
     font-family: 'Courier New';
+    margin: 0;
+    background-color: #282c34;
+}
+.calculatorArea{
+    margin: 50px;
     font-size: large;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #282c34;
 }
 .calculator{
     padding: 10px;
@@ -57,4 +61,14 @@ button{
 .result{
     background-color: #1a1a1d;
     color: #9d00ff;
+}
+.header{
+    color: bisque;
+    font-size: 50px;
+    height: 50px;
+    font-size: larger;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #141415;
 }
