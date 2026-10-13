@@ -11,6 +11,7 @@ body{
     justify-content: center;
 }
 .calculator{
+    max-width: 257px;
     padding: 10px;
     border-radius: 5%;
     border: 5px solid #1a1a1d;
@@ -24,6 +25,7 @@ body{
     background-color: #0c0c0e;
     color: #ff9e00;
     color: aqua;
+    overflow: hidden;
 }
 button{
     font-size: large;
@@ -63,12 +65,29 @@ button{
     color: #9d00ff;
 }
 .header{
-    color: bisque;
+    color: #156ea1;
     font-size: 50px;
-    height: 50px;
+    height: 70px;
     font-size: larger;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #141415;
+}
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    color: #156ea1;
+}
+a{
+    color: #06b6d4;
+    text-decoration: none;
+}
+p{
+    font-size: larger;
+    line-height: 30px;
+    text-align: center;
+    margin: 5px;
 }
