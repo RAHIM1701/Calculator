@@ -10,28 +10,34 @@
 <body>
 <div class="calculator">
     <div class="display"></div>
-    <div id="buttons">
-        <button value="0" class="numbKeys">0</button>
+    <div class="rowOne">
+        <button id="acButton">AC</button>
+        <button id="deleteButton"><=</button>
+        <button class="opKeys" value="/">/</button>
+    </div>
+    <div class="rowTwo">
+        <button value="9" class="numbKeys">9</button>
+        <button value="8" class="numbKeys">8</button>
+        <button value="7" class="numbKeys">7</button>
+        <button class="opKeys" value="*">x</button>
+    </div>
+    <div class="rowThree">
+        <button value="6" class="numbKeys">6</button>
+        <button value="5" class="numbKeys">5</button>
+        <button value="4" class="numbKeys">4</button>
+        <button class="opKeys" value="-">-</button>
+    </div>
+    <div class="rowFuor">
         <button value="1" class="numbKeys">1</button>
         <button value="2" class="numbKeys">2</button>
         <button value="3" class="numbKeys">3</button>
-        <button value="4" class="numbKeys">4</button>
-        <button value="5" class="numbKeys">5</button>
-        <button value="6" class="numbKeys">6</button>
-        <button value="7" class="numbKeys">7</button>
-        <button value="8" class="numbKeys">8</button>
-        <button value="9" class="numbKeys">9</button>
-    </div>
-    <button value="." id="dot">.</button>
-    <div class="opperationButtons">
         <button class="opKeys" value="+">+</button>
-        <button class="opKeys" value="-">-</button>
-        <button class="opKeys" value="*">x</button>
-        <button class="opKeys" value="/">/</button>
+    </div>
+    <div class="rowFive">
+        <button value="0" class="numbKeys">0</button>
+        <button value="." id="dot">.</button>
         <button class="result">=</button>
     </div>
-    <button id="deleteButton"><=</button>
-    <button id="acButton">AC</button>
 </div>
 </body>
 </html>

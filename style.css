@@ -4,11 +4,20 @@ body{
     justify-content: center;
 }
 .calculator{
-    width: 30%;
-    height: 50%;
     border: 2px solid red;
+    display: flex;
+    flex-direction: column;
 }
 .display{
     height: 20px;
     border: 2px solid blue;
+}
+button{
+    height: 50px;
+    width: 50px;
+}
+#buttons{
+    display: flex;
+    flex-direction: column-reverse;
+    
 }
