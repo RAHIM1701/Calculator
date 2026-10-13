@@ -1,32 +1,59 @@
 body{
+    font-family: 'Courier New';
+    font-size: large;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: #aa8080;
 }
 .calculator{
-    border: 2px solid red;
+    padding: 10px;
+    border-radius: 5%;
+    border: 5px solid #1a1a1d;
     display: flex;
     flex-direction: column;
+    background-color: #1a1a1d;
 }
 .display{
-    border: 2px solid blue;
+    border-radius: 5%;
+
+    background-color: #0c0c0e;
+    color: #ff9e00;
+    color: aqua;
 }
 button{
+    border-radius: 5%;
+    border: 1px solid #282844 ;
     height: 50px;
     width: 50px;
+    background-color: #252528;
+    color: #ff0033;
+    margin: 3px;
+}
+.opkeys{
+    background-color: #2a2a2e;
+    color: #00d4ff;
 }
 #buttons{
     display: flex;
     flex-direction: column-reverse;
 }
+.numbKeys{
+    background-color: #2a2a2e;
+    color: #39ff14;
+}
 .result, #acButton{
-    width: 105px;
+    width: 110px;
 }
 .oldOpperation{
     height: 30px;
-    border: 1px rgb(64, 47, 95) solid;
+    /* border: 1px rgb(64, 47, 95) solid; */
 }
 .newOpperation{
     height: 30px;
-    border: 1px rgb(99, 23, 23) solid;
+    /* border: 1px rgb(99, 23, 23) solid; */
+}
+.result{
+    background-color: #1a1a1d;
+    color: #9d00ff;
 }
