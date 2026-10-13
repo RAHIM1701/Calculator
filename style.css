@@ -9,7 +9,6 @@ body{
     flex-direction: column;
 }
 .display{
-    height: 20px;
     border: 2px solid blue;
 }
 button{
@@ -19,5 +18,15 @@ button{
 #buttons{
     display: flex;
     flex-direction: column-reverse;
-    
+}
+.result, #acButton{
+    width: 105px;
+}
+.oldOpperation{
+    height: 30px;
+    border: 1px rgb(64, 47, 95) solid;
+}
+.newOpperation{
+    height: 30px;
+    border: 1px rgb(99, 23, 23) solid;
 }

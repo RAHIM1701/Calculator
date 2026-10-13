@@ -16,12 +16,13 @@ function calculation(num1,num2,opperation){
 //the display
 let numb=[]
 let numberButtons=document.querySelectorAll('.numbKeys')
-let display=document.querySelector('.display')
+let newOpperation=document.querySelector('.newOpperation')
+let oldOpperation=document.querySelector('.oldOpperation')
 let opButtons=document.querySelectorAll('.opKeys')
 numberButtons.forEach(button =>{
     button.addEventListener('click',()=>{
         numb.push(button.value)
-        display.textContent=numb.join("")
+        newOpperation.textContent=numb.join("")
     })
 });
 //sitting the first number
@@ -32,8 +33,9 @@ opButtons.forEach(button => {
             firstNumb=Number(numb.join(""))
         }
         else{
+            oldOpperation.textContent=`${firstNumb}${opperation}${Number(numb.join(""))}`
             firstNumb=calculation(firstNumb,Number(numb.join("")),opperation)
-            display.textContent=firstNumb
+            newOpperation.textContent=firstNumb
         }
         opperation=button.value;
         numb=[]
@@ -47,7 +49,7 @@ let dotClicked=false
 dot.addEventListener('click',()=>{
     if(dotClicked===false){
     numb.push(dot.value)
-    display.textContent=numb.join("")
+    newOpperation.textContent=numb.join("")
     dotClicked=true
     }
 })
@@ -56,7 +58,8 @@ let resultButton=document.querySelector(".result")
 resultButton.addEventListener('click',()=>{
     secondNumb=Number(numb.join(""))
     numb=[]
-    display.textContent=`${firstNumb+opperation+secondNumb}=`+calculation(firstNumb,secondNumb,opperation)
+    oldOpperation.textContent=`${firstNumb+opperation+secondNumb}`
+    newOpperation.textContent=calculation(firstNumb,secondNumb,opperation)
     firstNumb=calculation(firstNumb,secondNumb,opperation)
     dotClicked=false
 })
@@ -64,7 +67,7 @@ resultButton.addEventListener('click',()=>{
 let deleteButton=document.querySelector("#deleteButton")
 deleteButton.addEventListener('click',()=>{
     numb.pop()
-    display.textContent=numb.join("")
+    newOpperation.textContent=numb.join("")
 })
 //AC button
 let acButton=document.querySelector('#acButton')
@@ -73,7 +76,8 @@ acButton.addEventListener('click',()=>{
     secondNumb=0
     opperation=NaN
     numb=[]
-    display.textContent=numb.join("")
+    oldOpperation.textContent=''
+    newOpperation.textContent=numb.join("")
     opperationClicked=false
     dotClicked=false
 })
