@@ -1,1 +1,5 @@
-# Calculator-
+# Calculator-The Odin Progect
+This is the last project of the foundations of the odin project. I took 2 weeks or more to push it because I was so busy with university and work and with my life in general. I wished I could put more time in coding because this what I really love to do but unfortunately I didn't have that much time. But maybe after this projec I will be able to put more time in the next chapter of The Odin Project 
+In this project I tried to not rush pushing it until I am sure it has no bugs. I fixed the most of them, But it still one bug when you click = then / it do the operation on 0 before you click the second number. I tried with it but I couldn't find a solution and I don't want to use AI to fix it. so I pushed it like this, but I will came back again to fix it.
+Otherwise I think everything is working. 
+I hope you like it.

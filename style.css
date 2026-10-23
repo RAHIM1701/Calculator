@@ -26,6 +26,7 @@ body{
     color: #ff9e00;
     color: aqua;
     overflow: hidden;
+    white-space: nowrap;
 }
 button{
     font-size: large;
@@ -52,11 +53,11 @@ button{
 .result, #acButton{
     width: 116px;
 }
-.oldOpperation{
+.oldOperation{
     height: 25px;
     font-size: 25px;
 }
-.newOpperation{
+.newOperation{
     height: 45px;
     font-size: 43px;
 }
@@ -90,4 +91,7 @@ p{
     line-height: 30px;
     text-align: center;
     margin: 5px;
+}
+button{
+    cursor: pointer;
 }

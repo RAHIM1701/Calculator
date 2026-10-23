@@ -1,14 +1,14 @@
 //a function that do the math
-function calculation(num1,num2,opperation){
+function calculation(num1,num2,operation){
     let result
-    switch (opperation) {
+    switch (operation) {
         case '+':result=num1+num2            
         break;
         case '-':result=num1-num2  
         break;
         case '*':result=num1*num2  
         break;
-        case '/':result=(num2===0)?'error':num1/num2  
+        case '/':result=(num2===0)?'error':num1/num2
         break;
     }
     return result
@@ -16,32 +16,32 @@ function calculation(num1,num2,opperation){
 //the display
 let numb=[]
 let numberButtons=document.querySelectorAll('.numbKeys')
-let newOpperation=document.querySelector('.newOpperation')
-let oldOpperation=document.querySelector('.oldOpperation')
+let newOperation=document.querySelector('.newOperation')
+let oldOperation=document.querySelector('.oldOperation')
 let opButtons=document.querySelectorAll('.opKeys')
 numberButtons.forEach(button =>{
     button.addEventListener('click',()=>{
         numb.push(button.value)
-        newOpperation.textContent=numb.join("")
+        newOperation.textContent=numb.join("")
     })
 });
 //sitting the first number
-let firstNumb,secondNumb,opperation,opperationClicked=false
+let firstNumb=0,secondNumb=0,operation='+',operationClicked=false
 opButtons.forEach(button => {
     button.addEventListener('click',()=>{
-        if(!opperationClicked){
+        if(!operationClicked){
             firstNumb=Number(numb.join(""))
         }
         else{
-            oldOpperation.textContent=`${firstNumb}${opperation}${Number(numb.join(""))}`
-            firstNumb=calculation(firstNumb,Number(numb.join("")),opperation)
-            newOpperation.textContent=firstNumb
+            oldOperation.textContent=`${firstNumb}${operation}${Number(numb.join(""))}`
+            newOperation.textContent=firstNumb
+            firstNumb=calculation(firstNumb,Number(numb.join("")),operation)
         }
-        opperation=button.value;
+        operation=button.value;
         numb=[]
-        opperationClicked=true
+        operationClicked=true
         dotClicked=false
-    })
+      })
 });
 //the dot
 let dot=document.querySelector('#dot')
@@ -49,7 +49,7 @@ let dotClicked=false
 dot.addEventListener('click',()=>{
     if(dotClicked===false){
     numb.push(dot.value)
-    newOpperation.textContent=numb.join("")
+    newOperation.textContent=numb.join("")
     dotClicked=true
     }
 })
@@ -57,27 +57,27 @@ dot.addEventListener('click',()=>{
 let resultButton=document.querySelector(".result")
 resultButton.addEventListener('click',()=>{
     secondNumb=Number(numb.join(""))
+    oldOperation.textContent=`${firstNumb+operation+secondNumb}`
+    newOperation.textContent=calculation(firstNumb,secondNumb,operation)
+    firstNumb=calculation(firstNumb,secondNumb,operation)
     numb=[]
-    oldOpperation.textContent=`${firstNumb+opperation+secondNumb}`
-    newOpperation.textContent=calculation(firstNumb,secondNumb,opperation)
-    firstNumb=calculation(firstNumb,secondNumb,opperation)
     dotClicked=false
 })
 //delete button
 let deleteButton=document.querySelector("#deleteButton")
 deleteButton.addEventListener('click',()=>{
     numb.pop()
-    newOpperation.textContent=numb.join("")
+    newOperation.textContent=numb.join("")
 })
 //AC button
 let acButton=document.querySelector('#acButton')
 acButton.addEventListener('click',()=>{
     firstNumb=0
     secondNumb=0
-    opperation=NaN
+    operation=NaN
     numb=[]
-    oldOpperation.textContent=''
-    newOpperation.textContent=numb.join("")
-    opperationClicked=false
+    oldOperation.textContent=''
+    newOperation.textContent=numb.join("")
+    operationClicked=false
     dotClicked=false
 })
